@@ -26,3 +26,16 @@ pub fn longest_palindrome(s: &str) -> String {
     }
     max.into_iter().collect()
 }
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn test_longest_palindrome() {
+        assert_eq!(
+            longest_palindrome(&",.masdaaaeeeffffff"),
+            String::from("ffffff")
+        );
+    }
+}

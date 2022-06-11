@@ -1,9 +1,11 @@
-pub mod add_two_numbers;
-pub mod longest_palindrome;
-pub mod maximum_subarray_min_product;
-pub mod sum_of_subarray_minimums;
-pub mod sum_of_total_strength_of_wizards;
-pub mod two_sums;
+mod add_two_numbers;
+mod longest_palindrome;
+mod longest_substring_without_repeating_characters;
+mod maximum_subarray_min_product;
+mod minimum_operations_to_reduce_x_to_zero;
+mod sum_of_subarray_minimums;
+mod sum_of_total_strength_of_wizards;
+mod two_sums;
 
 fn main() {
     let s = two_sums::two_sums(vec![1, 2, 3, 4, 5], 7);
