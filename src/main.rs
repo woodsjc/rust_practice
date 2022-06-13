@@ -5,6 +5,7 @@ mod maximum_subarray_min_product;
 mod minimum_operations_to_reduce_x_to_zero;
 mod sum_of_subarray_minimums;
 mod sum_of_total_strength_of_wizards;
+mod triangle;
 mod two_sums;
 
 fn main() {
