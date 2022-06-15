@@ -1,6 +1,8 @@
 mod add_two_numbers;
+mod delete_operation_for_two_strings;
 mod longest_palindrome;
 mod longest_substring_without_repeating_characters;
+mod maximum_erasure_value;
 mod maximum_subarray_min_product;
 mod minimum_operations_to_reduce_x_to_zero;
 mod sum_of_subarray_minimums;
