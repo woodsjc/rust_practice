@@ -19,55 +19,32 @@ impl TreeNode {
     }
 }
 
-fn dfs(node: Option<&Rc<RefCell<TreeNode>>>, prior_covered: bool, current_covered: bool) -> i32 {
+fn dfs(node: Option<Rc<RefCell<TreeNode>>>, ans: &mut i32) -> i32 {
     if node.is_none() {
         return 0;
     }
 
-    let node = node.unwrap().borrow();
-    let l = &node.left;
-    let r = &node.right;
+    let mut node = node.as_ref().unwrap().borrow_mut();
+    let left = &node.left;
+    let right = &node.right;
 
-    if !prior_covered {
-        if l.is_some() && r.is_some() {
-            return 1 + dfs(l.as_ref(), true, true) + dfs(r.as_ref(), true, true);
-        } else if l.is_none() && r.is_none() {
-            return 1;
-        } else if l.is_some() {
-            return 1 + dfs(l.as_ref(), true, true);
-        } else {
-            return 1 + dfs(r.as_ref(), true, true);
-        }
+    node.val = dfs(left.as_ref().map(Rc::clone), ans) + dfs(right.as_ref().map(Rc::clone), ans);
+    if node.val == 0 {
+        return 3;
+    } else if node.val < 3 {
+        return 0;
     }
-
-    if l.is_some() && r.is_some() {
-        return i32::min(
-            1 + dfs(l.as_ref(), true, true) + dfs(r.as_ref(), true, true),
-            dfs(l.as_ref(), current_covered, false) + dfs(r.as_ref(), current_covered, false),
-        );
-    } else if l.is_none() && r.is_none() {
-        if current_covered {
-            return 0;
-        }
-        return 1;
-    } else if l.is_some() {
-        return i32::min(
-            dfs(l.as_ref(), current_covered, false),
-            1 + dfs(l.as_ref(), true, true),
-        );
-    } else {
-        return i32::min(
-            dfs(r.as_ref(), current_covered, false),
-            1 + dfs(r.as_ref(), true, true),
-        );
-    }
+    *ans += 1;
+    return 1;
 }
 
 fn min_camera_cover(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    i32::min(
-        dfs(root.as_ref(), true, false),
-        1 + dfs(root.as_ref(), true, true),
-    )
+    let mut ans: i32 = 0;
+    let result = dfs(root, &mut ans);
+    if result > 2 {
+        return ans + 1;
+    }
+    ans
 }
 
 #[cfg(test)]

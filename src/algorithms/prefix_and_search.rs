@@ -1,7 +1,7 @@
 #[derive(Default)]
 struct Trie {
     i: i32,
-    children: [Option<Box<Trie>>; 27],
+    children: std::collections::HashMap<char, Trie>,
 }
 
 struct WordFilter {
@@ -12,19 +12,15 @@ impl WordFilter {
     fn new(words: Vec<String>) -> Self {
         let mut trie = Trie::default();
         for (i, word) in words.iter().enumerate() {
-            let s = format!("{}{{{}", &word, &word);
+            let s = format!("{}#{}", &word, &word);
 
             println!("s:{}", s);
-            for j in 0..word.len() {
+            for (j, _) in word.chars().enumerate() {
+                //for j in 0..word.len() {
                 let mut node = &mut trie;
-                for &b in &s.as_bytes()[j..] {
-                    println!(
-                        "b:{}, &b:{}, &s.as_bytes()[j..]:{:?}",
-                        b,
-                        &b,
-                        &s.as_bytes()[j..]
-                    );
-                    node = node.children[(b - b'a') as usize].get_or_insert_with(Default::default);
+                for c in s.chars().skip(j) {
+                    println!("c:{}, s:{}, j:{}", c, s, j);
+                    node = node.children.entry(c).or_insert(Trie::default());
                     node.i = i as i32;
                 }
             }
@@ -34,11 +30,11 @@ impl WordFilter {
 
     fn f(&self, prefix: String, suffix: String) -> i32 {
         let mut node = &self.trie;
-        let s = format!("{}{{{}", &suffix, &prefix);
+        let s = format!("{}#{}", &suffix, &prefix);
         println!("s:{}", s);
-        for &b in s.as_bytes() {
-            if let Some(n) = &node.children[(b - b'a') as usize] {
-                node = n.as_ref();
+        for c in s.chars() {
+            if let Some(n) = &node.children.get(&c) {
+                node = n;
             } else {
                 return -1;
             }
