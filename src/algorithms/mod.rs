@@ -1,5 +1,6 @@
 pub mod add_two_numbers;
 mod binary_tree_cameras;
+mod candy;
 mod check_if_matrix_is_x_matrix;
 mod construct_target_array_with_multiple_sums;
 mod count_number_of_ways_to_place_houses;
