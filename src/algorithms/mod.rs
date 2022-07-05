@@ -10,6 +10,7 @@ mod delete_operation_for_two_strings;
 mod furthest_building_you_can_reach;
 mod kth_largest_element_in_an_array;
 pub mod longest_palindrome;
+mod longest_consecutive_sequence;
 mod longest_string_chain;
 mod longest_substring_without_repeating_characters;
 mod maximum_area_of_a_piece_of_cake_after;
