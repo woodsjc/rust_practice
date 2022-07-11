@@ -1,4 +1,6 @@
+mod binary_tree_right_side_view;
 pub mod add_two_numbers;
+mod smallest_number_in_infinite_set;
 mod binary_tree_cameras;
 mod candy;
 mod check_if_matrix_is_x_matrix;
@@ -23,6 +25,7 @@ mod maximum_score_of_spliced_array;
 mod maximum_subarray_min_product;
 mod maximum_units_on_a_truck;
 mod min_cost_climbing_stairs;
+mod minimum_amount_of_time_to_fill_cups;
 mod minimum_deletions_to_make_character_frequencies_unique;
 mod minimum_moves_to_equal_array_elements_2;
 mod minimum_operations_to_reduce_x_to_zero;
