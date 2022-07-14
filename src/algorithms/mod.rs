@@ -1,3 +1,5 @@
+mod binary_tree_level_order_traversal;
+mod matchsticks_to_square;
 mod binary_tree_right_side_view;
 pub mod add_two_numbers;
 mod smallest_number_in_infinite_set;
