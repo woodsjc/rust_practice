@@ -1,4 +1,5 @@
 mod binary_tree_level_order_traversal;
+mod max_area_of_island;
 mod matchsticks_to_square;
 mod binary_tree_right_side_view;
 pub mod add_two_numbers;
