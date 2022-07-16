@@ -1,3 +1,4 @@
+mod out_of_boundary_paths;
 mod binary_tree_level_order_traversal;
 mod max_area_of_island;
 mod matchsticks_to_square;
