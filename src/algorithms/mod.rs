@@ -1,3 +1,7 @@
+mod query_kth_smallest_trimmed_number;
+mod max_sum_of_a_pair_with_equal_sum_of_digits;
+mod maximum_number_of_pairs_in_array;
+mod k_inverse_pairs_array;
 mod out_of_boundary_paths;
 mod binary_tree_level_order_traversal;
 mod max_area_of_island;
