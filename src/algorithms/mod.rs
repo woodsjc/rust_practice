@@ -1,3 +1,6 @@
+mod pascals_triangle;
+mod subarray_sum_equals_k;
+mod number_of_submatricies_that_sum_to_target;
 mod query_kth_smallest_trimmed_number;
 mod max_sum_of_a_pair_with_equal_sum_of_digits;
 mod maximum_number_of_pairs_in_array;
