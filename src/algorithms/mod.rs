@@ -1,4 +1,5 @@
 mod pascals_triangle;
+mod number_of_matching_subsequences;
 mod subarray_sum_equals_k;
 mod number_of_submatricies_that_sum_to_target;
 mod query_kth_smallest_trimmed_number;
