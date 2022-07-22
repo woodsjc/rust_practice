@@ -1,3 +1,4 @@
+mod partition_list;
 mod pascals_triangle;
 mod reverse_linked_list_2;
 mod number_of_matching_subsequences;
