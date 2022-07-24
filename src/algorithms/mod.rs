@@ -1,3 +1,4 @@
+mod search_a_2d_matrix_2;
 mod count_of_smaller_numbers_after_self;
 mod partition_list;
 mod pascals_triangle;
