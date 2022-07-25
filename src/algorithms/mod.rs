@@ -1,3 +1,4 @@
+mod find_first_and_last_position_of_element_in_sorted_array;
 mod search_a_2d_matrix_2;
 mod count_of_smaller_numbers_after_self;
 mod partition_list;
